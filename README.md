@@ -10,24 +10,15 @@ A multithreaded sensor data logger built with **Zephyr RTOS v3.7.0** in C++, run
 
 ## Architecture
 sensor_thread (prio 5)
-
 └── reads temperature → puts in message queue
-
 │
-
 ▼
-
 [K_MSGQ message queue]
-
 │
-
 ▼
-
 logger_thread (prio 6)
-
 └── gets from queue → LOG_INF output
 watchdog_thread (prio 7)
-
 └── logs system uptime every 2 seconds
 
 ## Concepts demonstrated
